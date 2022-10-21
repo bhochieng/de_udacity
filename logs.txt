@@ -1,0 +1,145 @@
+disabled db connection
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAEF128F4273421.json file name json file.
+test loop
+num_songs                            1
+artist_id           AR7G5I41187FB4CE6C
+artist_latitude                   None
+artist_longitude                  None
+artist_location        London, England
+artist_name                   Adam Ant
+song_id             SONHOTT12A8C13493C
+title                  Something Girls
+duration                     233.40363
+year                              1982
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAARJ128F9320760.json file name json file.
+test loop
+num_songs                            1
+artist_id           AR8ZCNI1187B9A069B
+artist_latitude                   None
+artist_longitude                  None
+artist_location                       
+artist_name           Planet P Project
+song_id             SOIAZJW12AB01853F1
+title                       Pink World
+duration                     269.81832
+year                              1984
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAFD128F92F423A.json file name json file.
+test loop
+num_songs                            1
+artist_id           ARXR32B1187FB57099
+artist_latitude                   None
+artist_longitude                  None
+artist_location                       
+artist_name                        Gob
+song_id             SOFSOCN12A8C143F5D
+title                   Face the Ashes
+duration                     209.60608
+year                              2007
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAPK128E0786D96.json file name json file.
+test loop
+num_songs                                     1
+artist_id                    AR10USD1187B99F3F1
+artist_latitude                            None
+artist_longitude                           None
+artist_location     Burlington, Ontario, Canada
+artist_name               Tweeterfriendly Music
+song_id                      SOHKNRJ12A6701D1F8
+title                              Drop of Rain
+duration                              189.57016
+year                                          0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAVO128F93133D4.json file name json file.
+test loop
+num_songs                            1
+artist_id           ARGSJW91187B9B1D6B
+artist_latitude               35.21962
+artist_longitude             -80.01955
+artist_location         North Carolina
+artist_name               JennyAnyKind
+song_id             SOQHXMF12AB0182363
+title                  Young Boy Blues
+duration                     218.77506
+year                                 0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAABD128F429CF47.json file name json file.
+test loop
+num_songs                            1
+artist_id           ARMJAGH1187FB546F3
+artist_latitude               35.14968
+artist_longitude             -90.04892
+artist_location            Memphis, TN
+artist_name               The Box Tops
+song_id             SOCIWDW12A8C13D406
+title                        Soul Deep
+duration                     148.03546
+year                              1969
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAAW128F429D538.json file name json file.
+test loop
+num_songs                            1
+artist_id           ARD7TVE1187B99BFB1
+artist_latitude                   None
+artist_longitude                  None
+artist_location        California - LA
+artist_name                     Casual
+song_id             SOMZWCG12A8C13C480
+title                 I Didn't Mean To
+duration                     218.93179
+year                                 0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAADZ128F9348C2E.json file name json file.
+test loop
+num_songs                            1
+artist_id           ARKRRTF1187B9984DA
+artist_latitude                   None
+artist_longitude                  None
+artist_location                       
+artist_name           Sonora Santanera
+song_id             SOXVLOJ12AB0189215
+title                  Amor De Cabaret
+duration                     177.47546
+year                                 0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAVG12903CFA543.json file name json file.
+test loop
+num_songs                                           1
+artist_id                          ARNTLGG11E2835DDB9
+artist_latitude                                  None
+artist_longitude                                 None
+artist_location                                      
+artist_name                                       Clp
+song_id                            SOUDSGM12AC9618304
+title               Insatiable (Instrumental Version)
+duration                                    266.39628
+year                                                0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAMO128F1481E7F.json file name json file.
+test loop
+num_songs                                                     1
+artist_id                                    ARKFYS91187B98E58F
+artist_latitude                                            None
+artist_longitude                                           None
+artist_location                                                
+artist_name                               Jeff And Sheri Easter
+song_id                                      SOYMRWW12A6D4FAB14
+title               The Moon And I (Ordinary Day Album Version)
+duration                                               267.7024
+year                                                          0
+dtype: object
+//Users/bhochieng/Downloads/project-template/data/song_data/A/A/A/TRAAAMQ128F1460CD3.json file name json file.
+test loop
+num_songs                               1
+artist_id              ARD0S291187B9B7BF5
+artist_latitude                      None
+artist_longitude                     None
+artist_location                      Ohio
+artist_name                       Rated R
+song_id                SOMJBYD12A6D4F8557
+title               Keepin It Real (Skit)
+duration                        114.78159
+year                                    0
+dtype: object
+here
