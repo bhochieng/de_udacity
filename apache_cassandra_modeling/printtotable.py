@@ -7,3 +7,4 @@ x.add_row(["Brisbane", 5905, 1857594, 1146.4])
 x.add_row(["Darwin", 112, 120900, 1714.7])
 
 print(x)
+
