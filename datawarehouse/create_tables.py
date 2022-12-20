@@ -1,17 +1,21 @@
+#Here we import the necessary python packages for the project.
 import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
 
+#This function drop the existing tables.
 def drop_tables(cur, conn):
     for query in drop_table_queries:
         cur.execute(query)
         conn.commit()
 
+#This function creates tables.
 def create_tables(cur, conn):
     for query in create_table_queries:
         cur.execute(query)
         conn.commit()
 
+#The main function creates connection string and calls the drop table and create table functions.
 def main():
     config = configparser.ConfigParser()
     config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg')

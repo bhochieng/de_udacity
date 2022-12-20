@@ -1,20 +1,21 @@
+#Import the python packages
 import configparser
 import psycopg2
 from sql_queries import copy_table_queries, insert_table_queries
 
-
+#Call the load staging tables queries form the sql_queries file
 def load_staging_tables(cur, conn):
     for query in copy_table_queries:
         cur.execute(query)
         conn.commit()
 
-
+#Call the inser tables queries form the sql_queries file
 def insert_tables(cur, conn):
     for query in insert_table_queries:
         cur.execute(query)
         conn.commit()
 
-
+# defines connection to cloud through config file and Executes the above two functuons insert_tables and load_staging_tables
 def main():
     config = configparser.ConfigParser()
     config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg')

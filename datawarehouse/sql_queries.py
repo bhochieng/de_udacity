@@ -1,19 +1,19 @@
+#Import the python packages for the project.
 import configparser
 
 
-# CONFIG
+# We call and read the config file from the stored directory. NB: Change the path to your path.
 config = configparser.ConfigParser()
 config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg')
 
 
+#Here we get the corresponding values from the config file.
 LOG_DATA = config.get("S3", "LOG_DATA")
 LOG_JSONPATH = config.get("S3", "LOG_JSONPATH")
 SONG_DATA = config.get("S3", "SONG_DATA")
 ARN = config.get("IAM_ROLE", "ARN")
 
-# DROP TABLES
-
-
+# This part we DROP TABLES
 staging_events_table_drop = "DROP table IF EXISTS staging_events;"
 staging_songs_table_drop = "DROP table IF EXISTS staging_songs;"
 songplays_table_drop = "DROP table IF EXISTS songplays;"
@@ -22,8 +22,7 @@ songs_table_drop = "DROP table IF EXISTS songs;"
 artists_table_drop = "DROP table IF EXISTS artists;"
 time_table_drop = "DROP table IF EXISTS time;"
 
-# CREATE TABLES
-
+# Here we CREATE TABLES
 staging_events_table_create= ("""
 CREATE TABLE staging_songs
 (
@@ -125,8 +124,7 @@ time_table_create = ("""
     );
 """)
 
-# STAGING TABLES
-
+# Here we copy STAGING TABLES
 staging_events_copy = ("""
     COPY staging_events 
         FROM {} 
@@ -146,8 +144,7 @@ staging_songs_copy = ("""
         TRUNCATECOLUMNS BLANKSASNULL EMPTYASNULL;
 """).format(SONG_DATA, ARN)
 
-# FINAL TABLES
-
+# Here we ingest data into the FINAL TABLES
 songplay_table_insert = ("""
 
     INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent) 
@@ -218,8 +215,7 @@ time_table_insert = ("""
 
 """)
 
-# QUERY LISTS
-
+# Execute the QUERY LISTS
 create_table_queries = [staging_events_table_create, staging_songs_table_create, user_table_create,song_table_create, artist_table_create, time_table_create, songplay_table_create]
 drop_table_queries = [staging_events_table_drop, staging_songs_table_drop, songplays_table_drop, users_table_drop,songs_table_drop, artists_table_drop, time_table_drop]
 copy_table_queries = [staging_events_copy, staging_songs_copy]
