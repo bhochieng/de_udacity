@@ -1,10 +1,13 @@
 #Import the python packages for the project.
 import configparser
+import os
 
 
 # We call and read the config file from the stored directory. NB: Change the path to your path.
+working_directory = os.getcwd()
+file_path = working_directory + '/de_udacity/datawarehouse/dwh.cfg'
 config = configparser.ConfigParser()
-config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg')
+config.read(file_path)
 
 
 #Here we get the corresponding values from the config file.

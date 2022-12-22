@@ -2,6 +2,8 @@
 import configparser
 import psycopg2
 from sql_queries import create_table_queries, drop_table_queries
+import os
+
 
 #This function drop the existing tables.
 def drop_tables(cur, conn):
@@ -17,13 +19,12 @@ def create_tables(cur, conn):
 
 #The main function creates connection string and calls the drop table and create table functions.
 def main():
+    working_directory = os.getcwd()
+    file_path = working_directory + '/de_udacity/datawarehouse/dwh.cfg'
     config = configparser.ConfigParser()
-    config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg')
-    print(config.read('/Users/bhochieng/Documents/projects/de_udacity/datawarehouse/dwh.cfg'))
+    config.read(file_path)
 
-    #conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(HOST,DB_NAME,DB_USER,DB_PASSWORD,DB_PORT))
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
-    #conn_string="postgresql://{}:{}@{}:{}/{}".format(DWH_DB_USER, DWH_DB_PASSWORD, DWH_ENDPOINT, DWH_PORT,DWH_DB)
     print(conn)
     cur = conn.cursor()
 
