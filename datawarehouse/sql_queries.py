@@ -80,7 +80,7 @@ songplay_table_create = ("""
         PRIMARY KEY (songplay_id)
     );
 """)
-
+ #create users table
 user_table_create = ("""
     CREATE TABLE IF NOT EXISTS users(
         user_id       int distkey,
@@ -92,6 +92,7 @@ user_table_create = ("""
     );
 """)
 
+#create songs table
 song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs(
         song_id   varchar sortkey,
@@ -103,6 +104,7 @@ song_table_create = ("""
     );
 """)
 
+#create artist table
 artist_table_create = ("""
     CREATE TABLE IF NOT EXISTS artists(
         artist_id varchar sortkey,
@@ -114,6 +116,7 @@ artist_table_create = ("""
     );
 """)
 
+#create time table
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time(
         start_time    timestamp sortkey,
@@ -127,7 +130,7 @@ time_table_create = ("""
     );
 """)
 
-# Here we copy STAGING TABLES
+#copy events STAGING TABLE
 staging_events_copy = ("""
     COPY staging_events 
         FROM {} 
@@ -138,6 +141,7 @@ staging_events_copy = ("""
         TRUNCATECOLUMNS BLANKSASNULL EMPTYASNULL;
 """).format(LOG_DATA, ARN, LOG_JSONPATH)
 
+#copy songs STAGING TABLE
 staging_songs_copy = ("""
     COPY staging_songs 
         FROM {}
@@ -147,7 +151,7 @@ staging_songs_copy = ("""
         TRUNCATECOLUMNS BLANKSASNULL EMPTYASNULL;
 """).format(SONG_DATA, ARN)
 
-# Here we ingest data into the FINAL TABLES
+# Ingest data into songplays table
 songplay_table_insert = ("""
 
     INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent) 
@@ -166,6 +170,7 @@ songplay_table_insert = ("""
 
 """)
 
+# Ingest data into users table
 user_table_insert = ("""
     INSERT INTO users (user_id, first_name, last_name, gender, level)
         SELECT DISTINCT se.userId, 
@@ -177,7 +182,7 @@ user_table_insert = ("""
         WHERE se.userId IS NOT NULL;
 """)
 
-
+# Ingest data into songs table
 song_table_insert = ("""
 
     INSERT INTO songs (song_id, title, artist_id, year, duration) 
@@ -190,7 +195,7 @@ song_table_insert = ("""
         WHERE ss.song_id IS NOT NULL;
 
 """)
-
+ # Ingest data into artists table
 artist_table_insert = ("""
 
     INSERT INTO artists (artist_id, name, location, latitude, logitude)
@@ -203,7 +208,7 @@ artist_table_insert = ("""
         WHERE ss.artist_id IS NOT NULL;
 
 """)
-
+ # Ingest data into time table
 time_table_insert = ("""
     INSERT INTO time (start_time, hour, day, week, month, year, weekday)
         SELECT DISTINCT  se.ts,
