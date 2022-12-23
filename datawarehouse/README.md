@@ -9,6 +9,7 @@ This project is aimed at understanding cloud functions and deploying an ETL proc
 - AWS cloud
 - SQL understanding
 - Version Control
+- Python
 
 ## Installation.
 
