@@ -3,20 +3,20 @@ import configparser
 import os
 
 
-# We call and read the config file from the stored directory. NB: Change the path to your path.
+# Read config file.
 working_directory = os.getcwd()
 file_path = working_directory + '/de_udacity/datawarehouse/dwh.cfg'
 config = configparser.ConfigParser()
 config.read(file_path)
 
 
-#Here we get the corresponding values from the config file.
+# Get S3 and ARN details.
 LOG_DATA = config.get("S3", "LOG_DATA")
 LOG_JSONPATH = config.get("S3", "LOG_JSONPATH")
 SONG_DATA = config.get("S3", "SONG_DATA")
 ARN = config.get("IAM_ROLE", "ARN")
 
-# This part we DROP TABLES
+# DROP TABLES if exists
 staging_events_table_drop = "DROP table IF EXISTS staging_events;"
 staging_songs_table_drop = "DROP table IF EXISTS staging_songs;"
 songplays_table_drop = "DROP table IF EXISTS songplays;"
@@ -25,7 +25,7 @@ songs_table_drop = "DROP table IF EXISTS songs;"
 artists_table_drop = "DROP table IF EXISTS artists;"
 time_table_drop = "DROP table IF EXISTS time;"
 
-# Here we CREATE TABLES
+# create events table
 staging_events_table_create= ("""
 CREATE TABLE staging_songs
 (
@@ -41,7 +41,7 @@ CREATE TABLE staging_songs
   year int
 );
 """)
-
+ #create songs table
 staging_songs_table_create = ("""
 CREATE TABLE staging_events
 (
@@ -65,7 +65,7 @@ CREATE TABLE staging_events
     userId          int
 );
 """)
-
+ #create songplay table
 songplay_table_create = ("""
     CREATE TABLE songplays(
         songplay_id   int IDENTITY (0,1),

@@ -17,7 +17,7 @@ def insert_tables(cur, conn):
         cur.execute(query)
         conn.commit()
 
-# defines connection to cloud through config file and Executes the above two functuons insert_tables and load_staging_tables
+# Connect to DB.
 def main():
     working_directory = os.getcwd()
     file_path = working_directory + '/de_udacity/datawarehouse/dwh.cfg'
